@@ -4,16 +4,19 @@
 
 ## Plain `<script>`
 > Loads and execute synchronously.
+
 For normal `<script>` tags, HTML parsing is blocked when they are encountered. The script is fetched and executed immediately. HTML parsing is resumed after the script is executed.
 
 ## `<script async>`
 > Loads asynchronously and executes synchronously.
+
 The `<script>` will be fetched in parallel to HTML parsing and executed as soon as it is available (potentially before HTML parsing completes) and it will not necessarily be executed in the order in which it appears in HTML document.
 
 Use `async` when the script is independent of any other script on the page, for example analytics.
 
 ## `<script defer>`
 > Loads asynchronously and executes after HTML parsing.
+
 The `<script>` will be fetched in parallel to HTML parsing and executed when the document has been fully parsed, but before firing `DOMContentLoaded`. If there are multiple of them each deferred script is executed in the order they appeared in HTML document.
 
 ## Notes
