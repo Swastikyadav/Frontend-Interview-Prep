@@ -35,6 +35,12 @@ Array.prototype.myFilter = function (callbackFn, thisArg) {
 };
 ```
 
+## Edge Case
+- Passing the index and array to the filter callback.
+- Invoking the filter callback with the correct this if thisArg is specified.
+- Sparse arrays, e.g. [1, 2, , 4]. The empty values should be ignored while traversing the array.
+
+----
 **
 In JavaScript, if you access an index of an array that hasn't been assigned a value, it will return undefined, but there's a difference between an explicitly set undefined and an unassigned (or sparse) index.
 
